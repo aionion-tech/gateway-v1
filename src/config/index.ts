@@ -36,6 +36,7 @@ export const envConfig = (() => {
       console.warn("dev env");
       return developmentEnvConfig;
     case "production":
+      console.log(JSON.stringify(productionConfig));
       console.warn("prod env");
       return productionConfig;
     default:
