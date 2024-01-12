@@ -30,12 +30,16 @@ const NODE_ENV = process.env.NODE_ENV;
 export const envConfig = (() => {
   switch (NODE_ENV) {
     case "test":
+      console.warn("test env");
       return testEnvConfig;
     case "development":
+      console.warn("dev env");
       return developmentEnvConfig;
     case "production":
+      console.warn("prod env");
       return productionConfig;
     default:
+      console.warn("default env");
       return developmentEnvConfig;
   }
 })();

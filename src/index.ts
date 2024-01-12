@@ -8,9 +8,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 
-app.use("/api/v1", router);
+app.use(router);
 
 app.get("/echo", async (req: Request, res: Response) => {
   res.status(200).send("Hey gateway!");
