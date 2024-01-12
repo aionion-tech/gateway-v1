@@ -2,7 +2,7 @@ runtime: nodejs20
 env: standard
 env_variables:
   NODE_ENV: "production"
-  AUTH_SERVICE_URL: $ALLOWED_ORIGINS
+  AUTH_SERVICE_URL: $AUTH_SERVICE_URL
   PORT: $PORT
 automatic_scaling:
   max_instances: 2
