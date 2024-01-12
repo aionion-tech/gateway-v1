@@ -29,5 +29,13 @@ jobs:
       - name: Set up Cloud SDK
         uses: "google-github-actions/setup-gcloud@v2"
 
+      - uses: jacoz/gae-env-compile-action@v0.1
+        with:
+          path: app.yaml
+        env:
+          NODE_ENV: "production"
+          AUTH_SERVICE_URL: ${{ secrets.AUTH_SERVICE_URL }}
+          AUTH_SERVICE_PORT: ${{ secrets.AUTH_SERVICE_PORT }}
+
       - name: Deploy to Google App Engine
         run: gcloud config set project aionion-411022 && gcloud app deploy app.yaml --version=gatewayv1
