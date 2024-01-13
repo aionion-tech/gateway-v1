@@ -2,35 +2,37 @@ name: Gateway deploy
 
 on:
   push:
-    branches: ["main"]
-
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20"
+      - name: Install dependencies
+        run: npm install
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build app
+      - name: Build TypeScript
         run: npm run build
 
-      - name: "auth"
-        uses: "google-github-actions/auth@v2"
+      - name: Setup GCP Authentication
+        uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
       - name: Set up Cloud SDK
-        uses: "google-github-actions/setup-gcloud@v2"
+        uses: google-github-actions/setup-gcloud@v2
 
       - uses: jacoz/gae-env-compile-action@v0.1
         with:
@@ -40,5 +42,5 @@ jobs:
           AUTH_SERVICE_URL: ${{ secrets.AUTH_SERVICE_URL }}
           PORT: ${{ secrets.AUTH_SERVICE_PORT }}
 
-      - name: Deploy to Google App Engine
+      - name: Deploy to App Engine
         run: gcloud config set project aionion-411022 && gcloud app deploy app.yaml --version=gatewayv1
