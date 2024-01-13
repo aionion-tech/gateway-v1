@@ -41,4 +41,4 @@ jobs:
           PORT: ${{ secrets.AUTH_SERVICE_PORT }}
 
       - name: Deploy to App Engine
-        run: gcloud config set project aionion-411022 && gcloud app deploy app.yaml --version=gatewayv1
+        run: npm run deploy
