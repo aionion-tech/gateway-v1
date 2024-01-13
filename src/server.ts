@@ -9,7 +9,7 @@ import { rootError } from "./middlewares/rootError.middleware";
 
 const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 
 app.use(router);
 
