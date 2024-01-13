@@ -14,13 +14,21 @@ const app = express();
 app.use(router);
 
 app.get("/echo", async (req: Request, res: Response) => {
-  res.status(200).send("Hey gateway!");
+  try {
+    res.status(200).send("Hey gateway!");
+  } catch (error) {
+    console.log("whats wrong", error);
+  }
 });
 
 app.use(rootError);
 
 app.listen(envConfig.SERVER.PORT, async () => {
-  console.log(
-    `[server]: Server is running at http://localhost:${envConfig.SERVER.PORT}`
-  );
+  try {
+    console.log(
+      `[server]: Server is running at http://localhost:${envConfig.SERVER.PORT}`
+    );
+  } catch (error) {
+    console.log("hello ?", error);
+  }
 });
