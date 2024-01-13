@@ -1,6 +1,4 @@
 runtime: nodejs18
-env: flex
+env: standard
 env_variables:
-  NODE_ENV: "production"
   AUTH_SERVICE_URL: $AUTH_SERVICE_URL
-  PORT: $PORT
