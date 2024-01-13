@@ -1,5 +1,7 @@
 runtime: nodejs18
 env: standard
+build_env_variables:
+  GOOGLE_NODE_RUN_SCRIPTS: ""
 env_variables:
   NODE_ENV: "production"
   AUTH_SERVICE_URL: $AUTH_SERVICE_URL
