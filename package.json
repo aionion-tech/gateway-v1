@@ -7,7 +7,7 @@
     "build": "npx tsc",
     "start": "export NODE_ENV=production && node ./dist/server.js",
     "dev": "export NODE_ENV=development && nodemon src/server.ts",
-    "deploy": "gcloud app deploy app.yaml --version=authv1"
+    "deploy": "gcloud app deploy app.yaml --version=gatewayv1"
   },
   "keywords": [],
   "author": "",
