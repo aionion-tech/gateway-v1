@@ -2,11 +2,11 @@
   "name": "gateway-v1",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "export NODE_ENV=production && node dist/index.js",
-    "dev": "export NODE_ENV=development && nodemon src/index.ts"
+    "start": "export NODE_ENV=production && node dist/server.js",
+    "dev": "export NODE_ENV=development && nodemon src/server.ts"
   },
   "keywords": [],
   "author": "",

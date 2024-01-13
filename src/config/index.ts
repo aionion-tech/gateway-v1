@@ -21,7 +21,7 @@ const productionConfig = {
     AUTH_SERVICE_URL: process.env.AUTH_SERVICE_URL,
   },
   SERVER: {
-    PORT: process.env.PORT,
+    PORT: process.env.PORT || 3000,
   },
 };
 
