@@ -1,4 +1,4 @@
-runtime: nodejs18
+runtime: nodejs20
 env: standard
 env_variables:
   AUTH_SERVICE_URL: $AUTH_SERVICE_URL

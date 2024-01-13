@@ -9,9 +9,9 @@ import { rootError } from "./middlewares/rootError.middleware";
 
 const app = express();
 
-// app.use(express.json());
+app.use(express.json());
 
-// app.use(router);
+app.use(router);
 
 app.get("/echo", async (req: Request, res: Response) => {
   try {

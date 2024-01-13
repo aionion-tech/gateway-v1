@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install
@@ -36,9 +36,7 @@ jobs:
         with:
           path: app.yaml
         env:
-          NODE_ENV: "production"
           AUTH_SERVICE_URL: ${{ secrets.AUTH_SERVICE_URL }}
-          PORT: ${{ secrets.AUTH_SERVICE_PORT }}
 
       - name: Deploy to App Engine
         run: npm run deploy
