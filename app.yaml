@@ -1,5 +1,5 @@
 runtime: nodejs18
-env: standard
+env: flex
 build_env_variables:
   GOOGLE_NODE_RUN_SCRIPTS: ""
 env_variables:
