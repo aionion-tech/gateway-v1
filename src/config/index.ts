@@ -1,6 +1,7 @@
 const testEnvConfig = {
   SERVICES: {
     AUTH_SERVICE_URL: "http://localhost:3000",
+    WORKSPACE_SERVICE_URL: "http://localhost:3004",
   },
   SERVER: {
     PORT: process.env.PORT || 3001,
@@ -10,6 +11,7 @@ const testEnvConfig = {
 const developmentEnvConfig = {
   SERVICES: {
     AUTH_SERVICE_URL: "http://localhost:3000",
+    WORKSPACE_SERVICE_URL: "http://localhost:3004",
   },
   SERVER: {
     PORT: process.env.PORT || 3001,
@@ -19,6 +21,7 @@ const developmentEnvConfig = {
 const productionConfig = {
   SERVICES: {
     AUTH_SERVICE_URL: process.env.AUTH_SERVICE_URL,
+    WORKSPACE_SERVICE_URL: process.env.WORKSPACE_SERVICE_URL,
   },
   SERVER: {
     PORT: process.env.PORT || 8000,
